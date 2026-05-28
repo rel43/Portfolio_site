@@ -414,9 +414,9 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="site-polish.css?v=20260528-2">
-    <script src="site-images.js?v=20260528-2" defer></script>
-    <script src="site-tabs.js?v=20260528-2" defer></script>
+    <link rel="stylesheet" href="assets/css/site-polish.css?v=20260528-2">
+    <script src="assets/js/site-images.js?v=20260528-2" defer></script>
+    <script src="assets/js/site-tabs.js?v=20260528-2" defer></script>
 </head>
 <body class="page-home">
     <!-- Header Section -->
@@ -426,7 +426,7 @@
                 <!-- Sidebar -->
                 <div class="sidebar">
                     <div class="profile-photo">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" data-local-src="image/profile.jpg" alt="Profile Photo">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300" data-local-src="assets/images/profile.jpg" alt="Profile Photo">
                     </div>
                     
                     <nav class="nav-menu">
@@ -448,7 +448,7 @@
                 <!-- Main Header -->
                 <div class="main-header">
                     <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=800" data-local-src="image/hero.jpg" alt="Hero Art">
+                        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=800" data-local-src="assets/images/hero.jpg" alt="Hero Art">
                     </div>
                     <h1 class="portfolio-title">Portfolio</h1>
                 </div>
@@ -474,7 +474,7 @@
                     <p>You can see some of my personal artwork in the Interests section. I enjoy learning and getting inspired by different ideas.</p>
                 </div>
                 <div class="tab-image">
-                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400" data-local-src="image/about.jpg" alt="About Art">
+                    <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=400" data-local-src="assets/images/about.jpg" alt="About Art">
                 </div>
             </div>
 
@@ -489,7 +489,7 @@
                         <li>Improve my English to a professional level</li>
                     </ul>
                     <div class="goals-image">
-                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=400" data-local-src="image/goals.jpg" alt="Goals Art">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=400" data-local-src="assets/images/goals.jpg" alt="Goals Art">
                     </div>
                 </div>
             </div>
@@ -502,7 +502,7 @@
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
                 <!-- Category 1 -->
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600" data-local-src="image/fashion-concepts.jpg" alt="Fashion Concepts">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600" data-local-src="assets/images/fashion-concepts.jpg" alt="Fashion Concepts">
                     <div class="category-overlay">
                         <h3 class="category-title">Artistic Fashion Concepts</h3>
                         <p class="category-desc">My work in fashion concepts explores themed collections with fabrics, colors, and moodboards. I reinterpret historical costumes, combine complex ideas, and experiment with color and silhouette.</p>
@@ -511,7 +511,7 @@
 
                 <!-- Category 2 -->
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" data-local-src="image/costume-designs.jpg" alt="Costume Designs">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" data-local-src="assets/images/costume-designs.jpg" alt="Costume Designs">
                     <div class="category-overlay">
                         <h3 class="category-title">Individual Costume Designs</h3>
                         <p class="category-desc">This section features individual costume designs presented as single figures. Each look focuses on bold color, expressive form, and strong visual impact.</p>
@@ -520,7 +520,7 @@
 
                 <!-- Category 3 -->
                 <div class="category-card">
-                    <img src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?w=600" data-local-src="image/technical-drawings.jpg" alt="Technical Drawings">
+                    <img src="https://images.unsplash.com/photo-1512413914633-b5043f4041ea?w=600" data-local-src="assets/images/technical-drawings.jpg" alt="Technical Drawings">
                     <div class="category-overlay">
                         <h3 class="category-title">Technical Drawings & Patterns</h3>
                         <p class="category-desc">My work in technical drawings and patterns demonstrates garment construction, pattern making, and modeling. I combine precision with practical design skills.</p>
@@ -536,7 +536,7 @@
             <h2>Contact me</h2>
             <div class="contact-content">
                 <div class="qr-code">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://t.me/waspwas" data-local-src="image/qr-code.png" alt="Telegram QR Code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://t.me/waspwas" data-local-src="assets/images/qr-code.png" alt="Telegram QR Code">
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -580,7 +580,7 @@
         });
 
         // Open project pages from the work cards
-        const categoryLinks = ['fashion.html', 'tri.html', 'five.html'];
+        const categoryLinks = ['pages/fashion.html', 'pages/tri.html', 'pages/five.html'];
         document.querySelectorAll('.category-card').forEach((card, index) => {
             const link = categoryLinks[index];
             if (!link) return;

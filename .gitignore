@@ -2,5 +2,5 @@
 __pycache__/
 *.pyc
 webpage.code-workspace
-image/IMAGE*.jpg
+assets/images/IMAGE*.jpg
 .gh-savva/

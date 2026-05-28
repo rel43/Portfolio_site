@@ -1,7 +1,7 @@
 How to add images
 =================
 
-Put photos or drawings in this folder and rename them exactly like the file
+Put photos or drawings in assets/images and rename them exactly like the file
 names below. If the name is different by even one letter, the site will not
 find it.
 
@@ -10,7 +10,7 @@ If you want to change the round portrait on the main page, put the photo here
 and rename it to:
 profile.jpg
 
-Main page / odin.html
+Main page / index.html
 ---------------------
 profile.jpg
   Round portrait in the left menu. Best: square photo, face in the center.
@@ -104,4 +104,4 @@ Important notes
   placeholder.
 - If you replace an image and the browser still shows the old one, open the
   page with ?fresh at the end:
-  http://127.0.0.1:8000/odin.html?fresh
+  http://127.0.0.1:8000/index.html?fresh

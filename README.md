@@ -1,6 +1,6 @@
 # Portfolio Site
 
-Static portfolio website for GitHub Pages.
+Portfolio website for study task.
 
 ## Structure
 
@@ -30,13 +30,3 @@ Or manually:
 ```bash
 python3 serve.py
 ```
-
-## GitHub Pages
-
-Use repository settings:
-
-- Source: `Deploy from a branch`
-- Branch: `main`
-- Folder: `/ (root)`
-
-The site entry point is `index.html`.

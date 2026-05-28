@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Costume Designs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #1a1a1a;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling on desktop for full screen effect */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* --- Left Side: Gallery --- */
+        .gallery-section {
+            flex: 1.5; /* Takes up about 60% of width */
+            background-color: #121212;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; /* Allow scrolling if images are too tall */
+        }
+
+        .images-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .artwork {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            background-color: #fff; /* Fallback for transparent PNGs */
+        }
+
+        .artwork:hover {
+            transform: scale(1.02);
+        }
+
+        /* The bottom image needs to span both columns and be centered */
+        .artwork.bottom {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: 50%; /* Make it slightly smaller than the top ones relative to grid */
+            max-width: 350px;
+        }
+
+        /* --- Right Side: Info Panel --- */
+        .info-section {
+            flex: 1; /* Takes up about 40% of width */
+            /* Creating the blurred background effect seen in the image */
+            background: rgba(200, 200, 200, 0.4); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        /* Back Button */
+        .back-btn {
+            align-self: flex-end;
+            background-color: #e0e0e0;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            color: #000;
+            cursor: pointer;
+            margin-bottom: 40px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background-color: #ffffff;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222;
+            text-align: justify;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                overflow-y: auto;
+            }
+
+            body {
+                overflow: auto;
+            }
+
+            .gallery-section {
+                padding: 20px;
+                min-height: 50vh;
+            }
+
+            .images-wrapper {
+                grid-template-columns: 1fr; /* Stack images on mobile */
+                gap: 20px;
+            }
+
+            .artwork.bottom {
+                grid-column: auto;
+                width: 80%;
+                max-width: 400px;
+            }
+
+            .info-section {
+                padding: 40px 20px;
+                min-height: 50vh;
+            }
+            
+            .back-btn {
+                align-self: flex-start; /* Move back button to left on mobile */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="site-polish.css?v=20260528-2">
+    <script src="site-images.js?v=20260528-2" defer></script>
+</head>
+<body class="page-costumes">
+
+    <div class="container">
+        <!-- Left Side: Images -->
+        <section class="gallery-section">
+            <div class="images-wrapper">
+                <!-- Top Left Image -->
+                <img src="https://i.pinimg.com/736x/8f/3e/3b/8f3e3b6a5a5a5a5a5a5a5a5a5a5a5a5a.jpg"
+                     data-local-src="image/costume-1.jpg"
+                     data-fallback="https://via.placeholder.com/300x500/ffcccc/000000?text=Red+Design"
+                     onerror="this.src='https://via.placeholder.com/300x500/ffcccc/000000?text=Red+Design'" 
+                     alt="Red Costume Design" class="artwork">
+                
+                <!-- Top Right Image -->
+                <img src="https://i.pinimg.com/736x/2a/2a/2a/2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a.jpg"
+                     data-local-src="image/costume-2.jpg"
+                     data-fallback="https://via.placeholder.com/300x500/ccddff/000000?text=Blue+Design"
+                     onerror="this.src='https://via.placeholder.com/300x500/ccddff/000000?text=Blue+Design'" 
+                     alt="Blue Costume Design" class="artwork">
+                
+                <!-- Bottom Center Image -->
+                <img src="https://i.pinimg.com/736x/3b/3b/3b/3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b.jpg"
+                     data-local-src="image/costume-3.jpg"
+                     data-fallback="https://via.placeholder.com/300x500/ffeecc/000000?text=White+Design"
+                     onerror="this.src='https://via.placeholder.com/300x500/ffeecc/000000?text=White+Design'" 
+                     alt="White Costume Design" class="artwork bottom">
+            </div>
+        </section>
+
+        <!-- Right Side: Text Info -->
+        <section class="info-section">
+            <button class="back-btn" onclick="history.back()">Back</button>
+            
+            <h1>Individual Costume Designs</h1>
+            
+            <p>
+                This page presents individual costume designs created as standalone looks, each represented by a single figure. The costumes are characterized by bold, vibrant color palettes and expressive silhouettes, emphasizing my ability to work confidently with color, form, and visual balance. Each design is conceived as a complete artistic statement, focusing on individuality and character.
+            </p>
+            <br>
+            <p>
+                Although the costumes are based on different themes, they are united by an elegant and decorative approach. These dresses are designed for a variety of events and occasions, highlighting femininity, movement, and the beauty of the female figure. Through these works, I demonstrate my ability to create visually striking, festive garments that combine artistic expression with a strong sense of style.
+            </p>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Drawings</title>
+    <style>
+        /* Общие настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #111; /* Темный фон страницы */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Главный контейнер */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr; /* Три колонки: лево, центр (шире), право */
+            gap: 20px;
+            max-width: 1400px;
+            width: 100%;
+            height: 90vh; /* Высота на весь экран */
+        }
+
+        /* Боковые колонки (черные) */
+        .side-column {
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px; /* Отступ между картинками */
+            padding: 20px;
+        }
+
+        /* Изображения */
+        .drawing-box {
+            background-color: #fff;
+            width: 100%;
+            aspect-ratio: 4/3; /* Пропорции картинок */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .drawing-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Чтобы рисунок вписывался полностью */
+        }
+
+        /* Центральная колонка (с текстом и градиентом) */
+        .center-column {
+            /* Размытый градиентный фон */
+            background: linear-gradient(135deg, rgba(40, 80, 60, 0.8), rgba(60, 40, 80, 0.8), rgba(80, 60, 60, 0.8));
+            backdrop-filter: blur(20px); /* Эффект размытия фона */
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 10px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Сетка для текста внутри центральной колонки */
+        .text-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Две колонки текста */
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .text-item h3 {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+
+        .text-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+            text-align: justify;
+        }
+
+        /* Кнопка Back */
+        .back-btn-container {
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+        }
+
+        .back-btn {
+            background-color: #e0e0e0;
+            color: #000;
+            border: none;
+            padding: 15px 60px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            font-weight: 500;
+        }
+
+        .back-btn:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr; /* Одна колонка */
+                height: auto;
+            }
+
+            .side-column {
+                flex-direction: row; /* Картинки в ряд */
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .drawing-box {
+                width: 45%; /* Картинки поменьше */
+                aspect-ratio: 1/1;
+            }
+
+            .text-grid {
+                grid-template-columns: 1fr; /* Текст в одну колонку */
+            }
+            
+            .center-column {
+                order: -1; /* Центральная часть сверху на мобильном */
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="site-polish.css?v=20260528-2">
+    <script src="site-images.js?v=20260528-2" defer></script>
+</head>
+<body class="page-technical">
+
+    <div class="main-container">
+        
+        <!-- Левая колонка: Картинки -->
+        <div class="side-column">
+            <div class="drawing-box is-square">
+                <!-- Замените src на реальное изображение пиджака -->
+                <img src="https://via.placeholder.com/400x300/ffffff/000000?text=Jacket+Drawing" data-local-src="image/drawing-jacket.jpg" alt="Jacket Technical Drawing">
+            </div>
+            <div class="drawing-box is-portrait">
+                <!-- Замените src на реальное изображение брюк -->
+                <img src="https://via.placeholder.com/400x300/ffffff/000000?text=Trousers+Drawing" data-local-src="image/drawing-trousers.jpg" alt="Trousers Technical Drawing">
+            </div>
+        </div>
+
+        <!-- Центральная колонка: Текст -->
+        <div class="center-column">
+            <div class="text-grid">
+                <!-- Текст: Пиджак -->
+                <div class="text-item">
+                    <h3>Jacket</h3>
+                    <p>A technical drawing of a straight-cut jacket featuring a notched lapel collar, flap pockets, waist darts, and a welt pocket, demonstrating classic tailoring and clean structure.</p>
+                </div>
+
+                <!-- Текст: Блузка -->
+                <div class="text-item">
+                    <h3>Blouse</h3>
+                    <p>A technical drawing of a straight-fit shirt with a patch pocket, waist-length cut, back yoke, and center back pleat, emphasizing clarity of construction and proportions.</p>
+                </div>
+
+                <!-- Текст: Брюки -->
+                <div class="text-item">
+                    <h3>Trousers</h3>
+                    <p>A technical drawing of classic straight-leg trousers with pressed creases, cuffed hems, and back welt pockets, highlighting fit accuracy and functional detailing.</p>
+                </div>
+
+                <!-- Текст: Юбка -->
+                <div class="text-item">
+                    <h3>Skirt</h3>
+                    <p>A technical drawing of a flared skirt created through all-over pleats, featuring patch pockets with flaps and a button closure, focusing on volume, rhythm, and decorative elements.</p>
+                </div>
+            </div>
+
+            <!-- Кнопка назад -->
+            <div class="back-btn-container">
+                <button class="back-btn" onclick="history.back()">Back</button>
+            </div>
+        </div>
+
+        <!-- Правая колонка: Картинки -->
+        <div class="side-column">
+            <div class="drawing-box is-portrait">
+                <!-- Замените src на реальное изображение блузки -->
+                <img src="https://via.placeholder.com/400x300/ffffff/000000?text=Blouse+Drawing" data-local-src="image/drawing-blouse.jpg" alt="Blouse Technical Drawing">
+            </div>
+            <div class="drawing-box is-portrait">
+                <!-- Замените src на реальное изображение юбки -->
+                <img src="https://via.placeholder.com/400x300/ffffff/000000?text=Skirt+Drawing" data-local-src="image/drawing-skirt.jpg" alt="Skirt Technical Drawing">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

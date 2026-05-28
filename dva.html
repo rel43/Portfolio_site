@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #1a1a1a;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #d8d8d8;
+            border-radius: 20px;
+            padding: 40px;
+            min-height: 800px;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-block;
+            background: #e0e0e0;
+            color: #1a1a1a;
+            padding: 12px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .back-button:hover {
+            background: #c8c8c8;
+            transform: translateY(-2px);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 40px;
+            clear: both;
+        }
+
+        .tab {
+            padding: 12px 30px;
+            background: #1a1a1a;
+            color: #1a1a1a;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 400;
+            transition: all 0.3s;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab.inactive {
+            background: #1a1a1a;
+            color: #1a1a1a;
+        }
+
+        .tab.active {
+            background: #ff66b2;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px 0;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+            max-width: 600px;
+            text-align: right;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            border-radius: 25px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .social-item:hover {
+            opacity: 0.7;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .telegram {
+            background: #0088cc;
+        }
+
+        .vk {
+            background: #4a76a8;
+        }
+
+        .social-url {
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .description {
+                text-align: left;
+            }
+
+            .social-links {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .tab {
+                border-radius: 5px;
+                text-align: left;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .back-button {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="site-polish.css?v=20260528-2">
+    <script src="site-images.js?v=20260528-2" defer></script>
+    <script src="site-tabs.js?v=20260528-2" defer></script>
+</head>
+<body class="page-interests">
+    <div class="container">
+        <!-- Back Button -->
+        <button class="back-button" onclick="history.back()">Back</button>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab inactive">About me</button>
+            <button class="tab inactive">Skills</button>
+            <button class="tab active">Interests</button>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <p class="description">
+                I am passionate about illustration and digital art. I like experimenting with different styles and expressing my creativity through personal projects.
+            </p>
+
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=400" data-local-src="image/interest-1.jpg" alt="Character Illustration 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1635322966219-b75ed372eb01?w=400" data-local-src="image/interest-2.jpg" alt="Character Illustration 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1618331835717-78f1624b67b8?w=400" data-local-src="image/interest-3.jpg" alt="Character Illustration 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c0f04b1a1?w=400" data-local-src="image/interest-4.jpg" alt="Character Illustration 4">
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://t.me/waspwas" class="social-item" target="_blank">
+                    <div class="social-icon telegram">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                            <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                        </svg>
+                    </div>
+                    <span class="social-url">https://t.me/waspwas</span>
+                </a>
+
+                <a href="https://vk.ru/whereismyreason" class="social-item" target="_blank">
+                    <div class="social-icon vk">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                            <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.719-1.033-1.033-1.49-1.17-1.72-1.17-.163 0-.395.047-.395.607v1.621c0 .434-.137.69-1.24.69-1.828 0-3.853-1.11-5.274-3.172C4.809 10.916 4 8.216 4 7.754c0-.258.103-.495.597-.495h1.744c.442 0 .61.2.776.66.854 2.478 2.29 4.65 2.882 4.65.22 0 .32-.103.32-.65V9.428c-.065-1.162-.68-1.255-.68-1.668 0-.2.172-.385.44-.385h2.74c.37 0 .504.195.504.633v3.42c0 .365.162.495.266.495.22 0 .4-.13.8-.528 1.24-1.38 2.12-3.49 2.12-3.49.11-.258.31-.495.75-.495h1.744c.524 0 .64.265.524.633-.218 1.014-2.34 4.02-2.34 4.02-.184.298-.258.434 0 .765.184.238.786.765 1.19 1.228.745.84 1.31 1.545 1.463 2.026.164.485-.09.73-.582.73z"/>
+                        </svg>
+                    </div>
+                    <span class="social-url">https://vk.ru/whereismyreason</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
+                });
+                this.classList.remove('inactive');
+                this.classList.add('active');
+                
+                // Here you would typically load different content
+                const tabName = this.textContent;
+                console.log('Switched to tab:', tabName);
+            });
+        });
+
+        // Gallery item click
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // You can add lightbox or other functionality here
+                console.log('Gallery item clicked');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+webpage.code-workspace
+image/IMAGE*.jpg
+.gh-savva/

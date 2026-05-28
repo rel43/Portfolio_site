@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Portfolio</title>
+    <style>
+        /* Общие настройки */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1a1a1a; /* Темный фон страницы */
+            color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Контейнер карточки */
+        .card {
+            background-color: #d8d8d8; /* Светло-серый фон карточки */
+            width: 90%;
+            max-width: 1200px;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Кнопка Back */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #e0e0e0;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #ffffff;
+        }
+
+        /* Вкладки (Tabs) */
+        .tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #1a1a1a;
+        }
+
+        .tab.active {
+            background-color: #ff80bf; /* Розовый цвет активной вкладки */
+            border-radius: 5px 5px 0 0;
+            font-weight: 500;
+        }
+
+        /* Сетка контента */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Заголовки секций */
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        /* Soft Skills (Прогресс бары) */
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #b06060; /* Цвет полоски */
+            border-radius: 5px;
+        }
+
+        /* Hard Skills (Список) */
+        ul.hard-skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.hard-skills-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Программы (Иконки) */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .program-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .lr { background-color: #001e36; color: #31a8ff; }
+        .ps { background-color: #001e36; color: #31a8ff; }
+        .procreate { background-color: white; color: black; border: 1px solid #ddd; font-size: 14px; text-align: center;}
+        .corel { background-color: white; color: black; border: 1px solid #ddd; font-size: 12px; text-align: center;}
+
+        /* Образование */
+        .education-item {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .education-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Изображение справа */
+        .artwork-container {
+            width: 100%;
+            height: 600px;
+            border-radius: 40px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .artwork-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .artwork-container {
+                height: 400px;
+                order: -1; /* Картинка сверху на мобильном */
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="site-polish.css?v=20260528-2">
+    <script src="site-images.js?v=20260528-2" defer></script>
+    <script src="site-tabs.js?v=20260528-2" defer></script>
+</head>
+<body class="page-skills">
+
+    <div class="card">
+        <!-- Кнопка назад -->
+        <button class="back-btn" onclick="history.back()">Back</button>
+
+        <!-- Вкладки -->
+        <div class="tabs">
+            <button class="tab">About me</button>
+            <button class="tab active">Skills</button>
+            <button class="tab">Interests</button>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="content-grid">
+            
+            <!-- Левая колонка -->
+            <div class="column-left">
+                <h2>Soft Skills</h2>
+                
+                <div class="skill-item">
+                    <span class="skill-name">Creativity</span>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Attention to Detail</span>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Collaboration</span>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Adaptability</span>
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Time Management</span>
+                    <div class="progress-bar"></div>
+                </div>
+
+                <h2>Programs</h2>
+                <div class="programs-grid">
+                    <div class="program-icon lr">Lr</div>
+                    <div class="program-icon ps">Ps</div>
+                    <div class="program-icon procreate">
+                        <span style="font-size: 24px;">🎨</span><br>Procreate
+                    </div>
+                    <div class="program-icon corel">
+                        <span style="font-size: 24px;">🎈</span><br>CorelDRAW
+                    </div>
+                </div>
+            </div>
+
+            <!-- Средняя колонка -->
+            <div class="column-middle">
+                <h2>Hard Skills</h2>
+                <ul class="hard-skills-list">
+                    <li>Create fashion illustrations</li>
+                    <li>Develop thematic collections</li>
+                    <li>Design historical costumes</li>
+                    <li>Work with digital illustrations</li>
+                    <li>Make patterns</li>
+                    <li>Understand sewing technology</li>
+                    <li>Experiment with silhouettes and colors</li>
+                    <li>Produce technical drawings</li>
+                </ul>
+
+                <h2>Education</h2>
+                <div class="education-item">
+                    <strong>Art education at an art school</strong>
+                    (11 years)
+                </div>
+                <div class="education-item">
+                    <strong>St. Petersburg University of Industrial Technologies and Design</strong>
+                    Garment Construction, 2024–2027 (expected)
+                </div>
+            </div>
+
+            <!-- Правая колонка (Картинка) -->
+            <div class="column-right">
+                <div class="artwork-container">
+                    <!-- Вставил ссылку на похожее абстрактное изображение -->
+                    <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-local-src="image/skills-art.jpg" alt="Abstract Art">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
